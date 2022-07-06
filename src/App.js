@@ -11,11 +11,19 @@ function App() {
   }, [filter]);
 
   return (
-    <main className='w-screen h-full pb-1 bg-Light-Grayish-Cyan'>
-      <header className="relative bg-[url('./images/bg-header-mobile.svg')] bg-desat-dark-cyan h-[156px]"></header>
-      {filter.length > 0 && <FilterBar filter={filter} setFilter={setFilter} />}
-      <JobListing filter={filter} setFilter={setFilter} />
-    </main>
+    <div className='h-full pb-1 bg-Light-Grayish-Cyan'>
+      <header className="relative bg-[url('./images/bg-header-mobile.svg')]  lg:bg-[url('./images/bg-header-desktop.svg')] bg-desat-dark-cyan h-[156px]"></header>
+      <div
+        className={`max-w-[1110px] mx-auto gap-y-6 ${
+          filter.length === 0 && "pt-[30px] lg:pt-0"
+        }`}
+      >
+        {filter.length > 0 && (
+          <FilterBar filter={filter} setFilter={setFilter} />
+        )}
+        <JobListing filter={filter} setFilter={setFilter} />
+      </div>
+    </div>
   );
 }
 

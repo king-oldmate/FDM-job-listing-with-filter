@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import data from "./data.json";
 
 const JobListing = ({ filter, setFilter }) => {
   const addTagToFilter = (tag) => {
     if (!filter.includes(tag)) setFilter([...filter, tag]);
   };
-
-  // useEffect(() => {
-  //   const filteredData = data.filter((object) => {
-  //     const { role, level, languages, tools } = object;
-  //     const tags = [role, level, ...languages, ...tools];
-  //     console.log(tags);
-  //     return;
-  //   });
-  // }, [filter]);
 
   return (
     <>
@@ -34,10 +25,6 @@ const JobListing = ({ filter, setFilter }) => {
         } = job;
         const tags = [role, level, ...languages, ...tools];
 
-        // go through filter array
-        // com
-
-        // if (tags.some((r) => filter.indexOf(r) >= 0) || filter.length === 0) {
         if (
           filter.every((e) => {
             return tags.includes(e);
@@ -47,38 +34,43 @@ const JobListing = ({ filter, setFilter }) => {
             <>
               <div
                 key={id}
-                className='px-6 pb-6 mx-6 bg-white border-l-4 rounded-md border-desat-dark-cyan mb-9 text-[15px] font-spartan shadow-lg shadow-Light-Grayish-cyan mt-12'
+                className={`px-6 pb-6 mx-6 bg-white  rounded-md  mb-9 text-[15px]  font-spartan shadow-lg shadow-Light-Grayish-cyan mt-6 lg:flex lg:content-center lg:px-10 lg:py-[30px] ${
+                  featured && "border-desat-dark-cyan border-l-4 pl-5 lg:pl-9"
+                }`}
               >
+                {/* need to adjust the u */}
                 <img
                   src={logo}
                   alt={company}
-                  className='w-12 -translate-y-6 aspect-square'
+                  className='w-12 -translate-y-6 aspect-square lg:w-[86px] lg:h-[86px] lg:translate-y-0 lg:mr-6'
                 />
-                <div className='mb-2'>
-                  <span className='mr-6 font-extrabold text-desat-dark-cyan'>
-                    {company}
-                  </span>
-                  {job.new && (
-                    <span className='px-[10px] py-[6px] mr-2 text-white uppercase rounded-2xl bg-desat-dark-cyan'>
-                      New!
+                <div>
+                  <div className='mb-2 lg:mb-1'>
+                    <span className='mr-6 font-extrabold text-desat-dark-cyan lg:text-[19px]'>
+                      {company}
                     </span>
-                  )}
-                  {featured && (
-                    <span className='px-[10px] py-[6px] text-white uppercase  rounded-2xl bg-[#2c3a3a]'>
-                      Featured
-                    </span>
-                  )}
-                </div>
+                    {job.new && (
+                      <span className='px-[10px] py-[6px] mr-2 text-white uppercase rounded-2xl bg-desat-dark-cyan'>
+                        New!
+                      </span>
+                    )}
+                    {featured && (
+                      <span className='px-[10px] py-[6px] text-white uppercase  rounded-2xl bg-[#2c3a3a]'>
+                        Featured
+                      </span>
+                    )}
+                  </div>
 
-                <h2 className='mb-2 font-extrabold hover:text-desat-dark-cyan'>
-                  {position}
-                </h2>
-                <div className='mb-2 text-Dark-Grayish-Cyan'>
-                  <span className='mr-1'>{postedAt}</span> •{" "}
-                  <span className='mx-1'>{contract}</span> •{" "}
-                  <span className='ml-1'>{location}</span>
+                  <h2 className='mb-2 lg:mb-1 font-extrabold hover:text-desat-dark-cyan w-fit hover:cursor-pointer lg:text-[25px]'>
+                    {position}
+                  </h2>
+                  <div className='mb-2 lg:mb-1 text-Dark-Grayish-Cyan'>
+                    <span className='mr-1'>{postedAt}</span> •{" "}
+                    <span className='mx-1'>{contract}</span> •{" "}
+                    <span className='ml-1'>{location}</span>
+                  </div>
                 </div>
-                <div className='border-t-[1px] border-Dark-Grayish-Cyan pt-1'>
+                <div className='border-t-[1px] border-Dark-Grayish-Cyan lg:border-0 pt-1 lg:ml-auto lg:text-base lg:self-center lg:mb-5'>
                   {tags.map((tag, index) => {
                     return (
                       <button
@@ -95,8 +87,8 @@ const JobListing = ({ filter, setFilter }) => {
             </>
           );
         }
+        // I don't know if this was the right thing to do but it got rid of an error message so yolo.
         return <></>;
-        // implement filter
       })}
     </>
   );
