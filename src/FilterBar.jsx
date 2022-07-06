@@ -17,7 +17,7 @@ const FilterBar = ({ filter, setFilter }) => {
               }
               className='p-2 ml-2 bg-desat-dark-cyan hover:bg-[#2c3a3a]'
             >
-              <img src={iconRemove} />
+              <img src={iconRemove} alt='remove' />
             </button>
           </span>
         );
