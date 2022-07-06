@@ -29,7 +29,7 @@ function App() {
           className='hover:text-desat-dark-cyan hover:underline'
           href='https://www.frontendmentor.io?ref=challenge'
           target='_blank'
-          rel='noopener'
+          rel='noreferrer'
         >
           Frontend Mentor
         </a>
@@ -38,7 +38,7 @@ function App() {
           className='hover:text-desat-dark-cyan hover:underline'
           href='https://raymond-zeaiter.au'
           target='_blank'
-          rel='noopener'
+          rel='noreferrer'
         >
           Raymond Zeaiter
         </a>
