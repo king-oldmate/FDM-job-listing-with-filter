@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import data from "./data.json";
 
-const JobListing = () => {
+const JobListing = ({ filter, setFilter }) => {
+  const addTagToFilter = (tag) => {
+    if (!filter.includes(tag)) setFilter([...filter, tag]);
+  };
+
   return (
     <>
       {data.map((job) => {
@@ -19,11 +23,12 @@ const JobListing = () => {
           languages,
           tools,
         } = job;
-        //need to access 'new' key somehow
+        const tags = [role, level, ...languages, ...tools];
+
         return (
           <div
             key={id}
-            className='px-6 pb-6 mx-6 bg-white border-l-4 rounded-md border-desat-dark-cyan mb-9 text-[15px] font-spartan shadow-lg shadow-Light-Grayish-cyan'
+            className='px-6 pb-6 mx-6 bg-white border-l-4 rounded-md border-desat-dark-cyan mb-9 text-[15px] font-spartan shadow-lg shadow-Light-Grayish-cyan mt-12'
           >
             <img
               src={logo}
@@ -40,7 +45,7 @@ const JobListing = () => {
                 </span>
               )}
               {featured && (
-                <span className='px-[10px] py-[6px] text-white uppercase bg-vdark-gray rounded-2xl bg-[#2c3a3a]'>
+                <span className='px-[10px] py-[6px] text-white uppercase  rounded-2xl bg-[#2c3a3a]'>
                   Featured
                 </span>
               )}
@@ -55,25 +60,22 @@ const JobListing = () => {
               <span className='ml-1'>{location}</span>
             </div>
             <div className='border-t-[1px] border-Dark-Grayish-Cyan pt-1'>
-              <button className='tags'>{role}</button>
-              <button className='tags'>{level}</button>
-              {languages.map((language, index) => {
+              {tags.map((tag, index) => {
                 return (
-                  <button key={index} className='tags'>
-                    {language}
-                  </button>
-                );
-              })}
-              {tools.map((tool, index) => {
-                return (
-                  <button key={index} className='tags'>
-                    {tool}
+                  <button
+                    key={index}
+                    className='tags'
+                    onClick={() => addTagToFilter(tag)}
+                  >
+                    {tag}
                   </button>
                 );
               })}
             </div>
           </div>
         );
+
+        // implement filter
       })}
     </>
   );
