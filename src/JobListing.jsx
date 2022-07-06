@@ -44,7 +44,7 @@ const JobListing = ({ filter, setFilter }) => {
                   alt={company}
                   className='w-12 -translate-y-6 aspect-square lg:w-[86px] lg:h-[86px] lg:translate-y-0 lg:mr-6'
                 />
-                <div>
+                <div className='lg:flex lg:flex-col lg:content-evenly'>
                   <div className='mb-2 lg:mb-1'>
                     <span className='mr-6 font-extrabold text-desat-dark-cyan lg:text-[19px]'>
                       {company}
@@ -61,16 +61,16 @@ const JobListing = ({ filter, setFilter }) => {
                     )}
                   </div>
 
-                  <h2 className='mb-2 lg:mb-1 font-extrabold hover:text-desat-dark-cyan w-fit hover:cursor-pointer lg:text-[25px]'>
+                  <h2 className='mb-2 lg:mb-1 font-extrabold hover:text-desat-dark-cyan w-fit hover:cursor-pointer text-base lg:text-[25px]'>
                     {position}
                   </h2>
-                  <div className='mb-2 lg:mb-1 text-Dark-Grayish-Cyan'>
+                  <div className='mb-3 lg:mb-1 text-Dark-Grayish-Cyan'>
                     <span className='mr-1'>{postedAt}</span> •{" "}
                     <span className='mx-1'>{contract}</span> •{" "}
                     <span className='ml-1'>{location}</span>
                   </div>
                 </div>
-                <div className='border-t-[1px] border-Dark-Grayish-Cyan lg:border-0 pt-1 lg:ml-auto lg:text-base lg:self-center lg:mb-5'>
+                <div className='border-t-[1px] border-Dark-Grayish-Cyan lg:border-0 pt-0 lg:ml-auto lg:text-base lg:self-center lg:mb-5 font-extrabold'>
                   {tags.map((tag, index) => {
                     return (
                       <button

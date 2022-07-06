@@ -3,7 +3,7 @@ import iconRemove from "./images/icon-remove.svg";
 
 const FilterBar = ({ filter, setFilter }) => {
   return (
-    <div className='flex flex-wrap p-5 mx-5 -translate-y-8 bg-white rounded-md font-spartan'>
+    <div className='flex flex-wrap p-5 mx-6 -translate-y-8 bg-white rounded-md shadow-lg font-spartan shadow-Light-Grayish-cyan'>
       {filter.map((tag, index) => {
         return (
           <span
@@ -24,7 +24,7 @@ const FilterBar = ({ filter, setFilter }) => {
       })}
       <button
         onClick={() => setFilter([])}
-        className='ml-auto font-extrabold justify-self-end text-Dark-Grayish-Cyan hover:text-desat-dark-cyan hover:underline'
+        className='ml-auto mr-1 font-extrabold lg:mr-5 justify-self-end text-Dark-Grayish-Cyan hover:text-desat-dark-cyan hover:underline'
       >
         Clear
       </button>

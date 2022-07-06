@@ -11,7 +11,7 @@ function App() {
   }, [filter]);
 
   return (
-    <div className='h-full pb-1 bg-Light-Grayish-Cyan'>
+    <div className='h-full pb-1 bg-Light-Grayish-Cyan font-spartan'>
       <header className="relative bg-[url('./images/bg-header-mobile.svg')]  lg:bg-[url('./images/bg-header-desktop.svg')] bg-desat-dark-cyan h-[156px]"></header>
       <div
         className={`max-w-[1110px] mx-auto gap-y-6 ${
@@ -23,6 +23,24 @@ function App() {
         )}
         <JobListing filter={filter} setFilter={setFilter} />
       </div>
+      <footer className='max-w-3xl p-6 mx-auto text-xs text-center'>
+        Challenge by{" "}
+        <a
+          className='hover:text-desat-dark-cyan hover:underline'
+          href='https://www.frontendmentor.io?ref=challenge'
+          target='_blank'
+        >
+          Frontend Mentor
+        </a>
+        . Coded by{" "}
+        <a
+          className='hover:text-desat-dark-cyan hover:underline'
+          href='https://raymond-zeaiter.au'
+        >
+          Raymond Zeaiter
+        </a>
+        .
+      </footer>
     </div>
   );
 }

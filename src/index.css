@@ -4,5 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
 
 .tags {
-  @apply px-2 pt-1 pb-1 mt-3 mr-4 rounded-sm text-desat-dark-cyan bg-Light-Grayish-Cyan hover:text-white hover:bg-desat-dark-cyan;
+  @apply px-2 pt-1 pb-1 mt-4 mr-4 rounded-[4px] text-desat-dark-cyan bg-Light-Grayish-Cyan hover:text-white hover:bg-desat-dark-cyan;
+}
+
+body {
+  @apply bg-Light-Grayish-Cyan;
 }
