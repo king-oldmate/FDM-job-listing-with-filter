@@ -8,7 +8,7 @@ const FilterBar = ({ filter, setFilter }) => {
         return (
           <span
             key={index}
-            className='pl-2 overflow-hidden font-extrabold rounded-md bg-Light-Grayish-Cyan text-desat-dark-cyan'
+            className='pl-2 mr-4 overflow-hidden font-extrabold rounded-md bg-Light-Grayish-Cyan text-desat-dark-cyan'
           >
             {tag}{" "}
             <button
