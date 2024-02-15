@@ -61,9 +61,6 @@ I would like to try and add:
 - [ ] job submission form
 - [ ] job application form
 
-It would be neat to turn something like this into a Tinder-like app but chances are it's already been done.
-
 ## Author
 
-- Website - [Raymond Zeaiter](https://raymond-zeaiter.au)
 - Frontend Mentor - [@king-oldmate](https://www.frontendmentor.io/profile/king-oldmate)
